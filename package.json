@@ -23,7 +23,7 @@
     "firebase": "^10.12.2",
     "firebase-admin": "^12.2.0",
     "lucide-react": "^0.400.0",
-    "next": "^15.2.1",
+    "next": "^16.1.6",
     "react": "^18",
     "react-dom": "^18",
     "react-hot-toast": "^2.4.1",
