@@ -1,0 +1,83 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg-primary: #0a0f1e;
+  --bg-secondary: #0d1526;
+  --bg-card: #111827;
+  --border: #1f2937;
+  --text-primary: #f9fafb;
+  --text-muted: #9ca3af;
+  --brand: #3b82f6;
+  --brand-glow: rgba(59,130,246,0.35);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: 'Inter', sans-serif;
+  scroll-behavior: smooth;
+}
+
+::-webkit-scrollbar { width: 6px; height: 6px; }
+::-webkit-scrollbar-track { background: var(--bg-primary); }
+::-webkit-scrollbar-thumb { background: #374151; border-radius: 4px; }
+::-webkit-scrollbar-thumb:hover { background: #4b5563; }
+
+/* Glass card utility */
+.glass {
+  background: rgba(17, 24, 39, 0.7);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(55, 65, 81, 0.5);
+}
+
+/* Rank medals */
+.rank-1 { background: linear-gradient(135deg, #f59e0b, #fbbf24); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+.rank-2 { background: linear-gradient(135deg, #94a3b8, #cbd5e1); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+.rank-3 { background: linear-gradient(135deg, #cd7c2f, #d97706); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+
+/* Leaderboard row animations */
+.lb-row {
+  transition: transform 0.3s ease, background-color 0.2s ease;
+}
+.lb-row:hover {
+  transform: translateX(4px);
+  background-color: rgba(59, 130, 246, 0.06);
+}
+
+/* Winner confetti overlay */
+.winner-overlay {
+  background: radial-gradient(ellipse at center, rgba(59,130,246,0.15) 0%, rgba(10,15,30,0.97) 70%);
+}
+
+/* Admin sidebar */
+.admin-sidebar {
+  background: linear-gradient(180deg, #0d1526 0%, #0a0f1e 100%);
+  border-right: 1px solid #1f2937;
+}
+
+/* Input styles */
+.form-input {
+  @apply w-full bg-dark-700 border border-dark-500 rounded-lg px-4 py-2.5 text-sm text-white placeholder-gray-500 focus:outline-none focus:border-brand-500 focus:ring-1 focus:ring-brand-500 transition-colors;
+}
+
+/* Button styles */
+.btn-primary {
+  @apply bg-brand-600 hover:bg-brand-700 text-white font-medium px-5 py-2.5 rounded-lg transition-all duration-200 active:scale-95 disabled:opacity-50 disabled:cursor-not-allowed;
+}
+
+.btn-secondary {
+  @apply bg-dark-600 hover:bg-dark-500 text-white font-medium px-5 py-2.5 rounded-lg border border-dark-500 transition-all duration-200 active:scale-95;
+}
+
+.btn-danger {
+  @apply bg-red-600/20 hover:bg-red-600/40 text-red-400 hover:text-red-300 font-medium px-4 py-2 rounded-lg border border-red-800/40 transition-all duration-200;
+}
